@@ -1,0 +1,3 @@
+[Definition]
+failregex = ^.*\[warn\].*delaying request, excess: .+ by zone "[^"]+", client: "<HOST>",.*$
+ignoreregex =

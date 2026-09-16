@@ -1,0 +1,11 @@
+[angie-limit-req]
+enabled  = true
+filter   = angie-limit-req
+logpath  = /var/log/docker.angie/error.log
+backend  = polling
+
+findtime = 60
+maxretry = 10
+bantime  = 1h
+
+action = iptables-multiport[name=angie-limit-req,port="http,https",protocol=tcp,chain=DOCKER-USER]

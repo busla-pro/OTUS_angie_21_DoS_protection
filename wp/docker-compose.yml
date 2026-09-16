@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   db:
     image: mysql:8.0
@@ -46,6 +44,8 @@ services:
       - ./angie-conf/http_angie.conf:/etc/angie/http.d/default.conf:ro
       - /var/acme-challenge/:/var/acme-challenge/:ro
       - /etc/letsencrypt/:/etc/letsencrypt/:ro
+      - /var/log/docker.angie/error.log:/var/log/angie/error.log:rw
+      - /var/log/docker.angie/access.log:/var/log/angie/access.log:rw
     networks:
       - app-network
 volumes:
